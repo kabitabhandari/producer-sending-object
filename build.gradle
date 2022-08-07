@@ -23,6 +23,10 @@ dependencies {
 
 	// org.apache.kafka/kafka-clients
 	implementation 'org.apache.kafka:kafka-clients:3.2.1'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka
+	implementation 'org.springframework.kafka:spring-kafka:2.9.0'
+
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
