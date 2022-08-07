@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("kafka")
-public class Controller {
+public class Controller<U,V> {
     private final static String TOPIC_BLACKTEA = "blacktea";
     private final static String TOPIC_MILKTEA = "milktea";
     private final static String KEY_MILKTEA = "key-milk-1";
