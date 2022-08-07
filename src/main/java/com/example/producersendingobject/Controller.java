@@ -13,7 +13,7 @@ public class Controller {
 
 
 
-    @PostMapping("/post/{name}")
+    @PostMapping("/producer/string/{name}")
     public String postName(@PathVariable("name") final String name) {
 
         kafkaTemplate.send("blacktea", new User(name, "n/a", 1L));
@@ -22,7 +22,7 @@ public class Controller {
     }
 
 
-    @PostMapping("/post/user")
+    @PostMapping("/producer/json/userdetails")
     public String postDetails(@RequestBody User newUser) {
 
         kafkaTemplate.send("milktea",newUser);
