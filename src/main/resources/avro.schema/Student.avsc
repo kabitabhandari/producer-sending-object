@@ -1,0 +1,19 @@
+{
+  "type" : "record",
+  "name" : "StudentData",
+  "namespace" : "com.example.producersendingobject.myavro",
+  "doc": "Data for Student",
+  "fields" : [ {
+    "name" : "name",
+    "type" : "string"
+  }, {
+    "name" : "course",
+    "type" : "string"
+  }, {
+    "name" : "isOnline",
+    "type" : "boolean"
+  }, {
+    "name" : "age",
+    "type" : "int"
+  } ]
+}

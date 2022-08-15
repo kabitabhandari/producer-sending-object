@@ -16,16 +16,33 @@ configurations {
 
 repositories {
 	mavenCentral()
+	// Inside the repositories block, add the confluent maven repository to look for confluent dependencies because confluent
+	// dependencies are in confluent repositories and not in maven repositories.
+	maven {
+		url = uri("https://packages.confluent.io/maven")
+	}
 }
 
 dependencies {
+	// spring-boot-starter
 	implementation 'org.springframework.boot:spring-boot-starter'
 
-	// org.apache.kafka/kafka-clients
-	implementation 'org.apache.kafka:kafka-clients:3.2.1'
+	// starter-web
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	// https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka
+
+	// spring-kafka
 	implementation 'org.springframework.kafka:spring-kafka:2.9.0'
+
+	// kafka-avro-serializer
+	implementation 'io.confluent:kafka-avro-serializer:7.1.1'
+
+	// kafka-clients
+	implementation 'org.apache.kafka:kafka-clients:3.2.1'
+
+
+
+	// avro
+	implementation 'org.apache.avro:avro:1.11.0'
 
 
 	compileOnly 'org.projectlombok:lombok'

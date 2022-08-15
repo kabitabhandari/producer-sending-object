@@ -3,18 +3,18 @@ package com.example.producersendingobject;
 import lombok.Data;
 
 @Data
-public class User {
+public class Employee {
     private String name;
-    private String dept;
     private Long salary;
+    private boolean isRemote;
 
-    public User() {
+    public Employee() {
 
     }
 
-    public User(String name, String dept, Long salary) {
+    public Employee(String name, Long salary, boolean isRemote) {
         this.name = name;
-        this.dept = dept;
         this.salary = salary;
+        this.isRemote = isRemote;
     }
 }
