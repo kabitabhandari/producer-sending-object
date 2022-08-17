@@ -1,0 +1,10 @@
+{
+  "type" : "record",
+  "name" : "Student",
+  "namespace" : "com.example.producersendingobject.avro",
+  "fields" : [
+  {"name" : "name", "type" : "string" },
+  {"name" : "course", "type" : "string"},
+  {"name" : "age", "type" : "int" }
+  ]
+}

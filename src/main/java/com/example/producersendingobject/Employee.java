@@ -5,16 +5,18 @@ import lombok.Data;
 @Data
 public class Employee {
     private String name;
+    private String dept;
     private Long salary;
-    private boolean isRemote;
+    private String title;
 
     public Employee() {
 
     }
 
-    public Employee(String name, Long salary, boolean isRemote) {
+    public Employee(String name, String dept, Long salary, String title) {
         this.name = name;
+        this.dept = dept;
         this.salary = salary;
-        this.isRemote = isRemote;
+        this.title = title;
     }
 }

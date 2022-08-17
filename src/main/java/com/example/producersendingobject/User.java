@@ -5,16 +5,16 @@ import lombok.Data;
 @Data
 public class User {
     private String name;
-    private String dept;
-    private Long salary;
+    private String location;
+    private Long householdIncome;
 
     public User() {
 
     }
 
-    public User(String name, String dept, Long salary) {
+    public User(String name, String dept, Long householdIncome) {
         this.name = name;
-        this.dept = dept;
-        this.salary = salary;
+        this.location = dept;
+        this.householdIncome = householdIncome;
     }
 }

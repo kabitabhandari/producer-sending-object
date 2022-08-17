@@ -14,15 +14,6 @@ configurations {
 	}
 }
 
-repositories {
-	mavenCentral()
-	// Inside the repositories block, add the confluent maven repository to look for confluent dependencies because confluent
-	// dependencies are in confluent repositories and not in maven repositories.
-	maven {
-		url = uri("https://packages.confluent.io/maven")
-	}
-}
-
 dependencies {
 	// spring-boot-starter
 	implementation 'org.springframework.boot:spring-boot-starter'
@@ -39,6 +30,8 @@ dependencies {
 	// kafka-clients
 	implementation 'org.apache.kafka:kafka-clients:3.2.1'
 
+	// avro-maven-plugin
+	implementation 'org.apache.avro:avro-maven-plugin:1.11.0'
 
 
 	// avro
