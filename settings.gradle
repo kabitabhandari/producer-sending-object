@@ -1,1 +1,6 @@
-rootProject.name = 'producer-sending-object'
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}

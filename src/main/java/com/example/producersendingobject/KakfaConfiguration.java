@@ -1,5 +1,6 @@
 package com.example.producersendingobject;
 
+import com.example.producersendingobject.avro.Student;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -47,23 +48,24 @@ public class KakfaConfiguration {
     public KafkaTemplate<String, Employee> kafkaTemplateForJsonMessageForEmployee() {
         return new KafkaTemplate<>(producerFactoryForJsonMessageForEmployee());
     }
-//    @Bean(name = "producerFactorySerializerAvro")
-//    public ProducerFactory<String, Student> producerFactoryForAvroMessage() {
-//
-//        Map<String, Object> config = new HashMap<>();
-//
-//        config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
-//        config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-//        config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class);
-//
-//        return new DefaultKafkaProducerFactory<>(config);
-//    }
-//
-//
-//    @Bean(name = "kafkaTemplateAvro")
-//    public KafkaTemplate<String, Student> kafkaTemplateForAvroMessage() {
-//        return new KafkaTemplate<>(producerFactoryForAvroMessage());
-//    }
+    @Bean(name = "producerFactorySerializerAvro")
+    public ProducerFactory<String, Student> producerFactoryForAvroMessage() {
+
+        Map<String, Object> props = new HashMap<>();
+
+        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
+        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class);
+        props.put("schema.registry.url","http://127.0.0.1:8081" );
+
+        return new DefaultKafkaProducerFactory<>(props);
+    }
+
+
+    @Bean(name = "kafkaTemplateAvro")
+    public KafkaTemplate<String, Student> kafkaTemplateForAvroMessage() {
+        return new KafkaTemplate<>(producerFactoryForAvroMessage(), true);
+    }
 
 
 }
