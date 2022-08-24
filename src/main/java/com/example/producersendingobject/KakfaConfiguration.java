@@ -1,6 +1,7 @@
 package com.example.producersendingobject;
 
 import com.example.producersendingobject.avro.Student;
+import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;

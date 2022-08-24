@@ -52,11 +52,6 @@ public class Controller {
     }
     @PostMapping("/producer/avro/studentdetails")
     public String postStudentDetails(@RequestBody Student newStudent) throws InterruptedException, ExecutionException, TimeoutException {
-
-      //  kafkaTemplateAvro.send(TOPIC_COFFEE, KEY_COFFEE, newStudent);
-      //  return "Published successfully";
-
-
         ListenableFuture<SendResult<String, Student>> future = kafkaTemplateAvro.send(TOPIC_COFFEE, KEY_COFFEE, newStudent);
         future.get(2, TimeUnit.SECONDS);
         return " ";
